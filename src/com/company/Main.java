@@ -3,7 +3,7 @@ package com.company;
 public class Main {
     /*param:a table tab of integer
     * out: an integer
-    * multiply recursively the tab elements value of the n firsts elements
+    * multiply recursively the tab elements value on the n firsts elements
     * and return the result
     * */
     static  int multiplyTab(int tab[]){
@@ -11,7 +11,7 @@ public class Main {
     }
     /*param:a table tab of integer and integer n
      * out: an integer
-     * multiply recursively the tab elements value of the n firsts elements
+     * multiply recursively the tab elements value on the n firsts elements
      *
      * and return the result
      * */
@@ -55,7 +55,7 @@ public class Main {
     }
     /*param:a table tab of integer and  n an integer
      * out: an integer
-     * looking for looking for the  tab minimal value of the n firsts elements
+     * looking for looking for the  tab minimal value on the n firsts elements
      * return the minimum
      * */
     public static int min(int[] tab,int n) {
@@ -80,9 +80,9 @@ public class Main {
     public static  int max(int []tab) {
         return tab[max(tab,0,0)];
     }
-    /*param:a table tab of integer and n an integer of the n firstss elements
+    /*param:a table tab of integer and n,j integers 
      * out: an integer
-     * looking for the tab maximal value
+     * looking for the index of tab maximal value on the n firsts elements
      * and return the maximum
      * */
     public static int max(int[] tab,int n,int j) {
