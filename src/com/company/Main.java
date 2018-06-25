@@ -1,16 +1,16 @@
 package com.company;
 
 public class Main {
-    
+
     /*param:a table tab of integer
-    * out: an integer
-    * multiply recursively the tab elements value on the n firsts elements
-    * and return the result
-    * */
+     * out: an integer
+     * multiply recursively the tab elements value on the n firsts elements
+     * and return the result
+     * */
     static  int multiplyTab(int tab[]){
         return multiplyTab(tab,tab.length-1);
     }
-    
+
     /*param:a table tab of integer and integer n
      * out: an integer
      * multiply recursively the tab elements value on the n firsts elements
@@ -22,16 +22,16 @@ public class Main {
         }else
             return  tab[n]     ;
     }
-    
+
     /*param:a table tab of integer
      * out: a Double
-     * return the tab average value
+     * return the tab average value or -1 if the tab is void
      */
     public static double averageTab(int []tab){
 
-       return  (double)tabSum(tab,0)/tab.length;
+        return  tab.length==0?-1:(double)tabSum(tab,0)/tab.length;
     }
-    
+
     /*param:a table tab of integer of the n first elements
      * out: a Double
      * return the tab sum value
@@ -46,7 +46,7 @@ public class Main {
         return -1;
 
     }
-    
+
     /*param:a table tab of integer and
      * out: an integer
      * looking for the tab minimal value
@@ -55,7 +55,7 @@ public class Main {
     public static int min(int tab[]) {
         return min(tab,0);
     }
-    
+
     /*param:a table tab of integer and  n an integer
      * out: an integer
      * looking for looking for the  tab minimal value on the n firsts elements
@@ -73,7 +73,7 @@ public class Main {
         }
         return tab[0];
     }
-    
+
     /*param:a table tab of integer
      * out: an integer
      * looking for the tab minimal value
@@ -82,8 +82,8 @@ public class Main {
     public static  int max(int []tab) {
         return tab[max(tab,0,0)];
     }
-    
-    /*param:a table tab of integer and n,j integers 
+
+    /*param:a table tab of integer and n,j integers
      * out: an integer
      * looking for the index of tab maximal value on the n firsts elements
      * and return the maximum
@@ -104,7 +104,7 @@ public class Main {
         // write your code here
         int sol=  multiplyTab(new int []{1,2,3,4});
         System.out.println("tab multiplication :"+sol);
-        System.out.print("mean : "+averageTab(new int []{1,2,3,4}));
+        System.out.print("mean : "+averageTab(new int []{}));
     }
 
 }
