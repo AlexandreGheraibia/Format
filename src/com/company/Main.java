@@ -1,5 +1,5 @@
 package com.company;
-
+//alex
 public class Main {
 
     /*param:a table tab of integer
@@ -7,7 +7,7 @@ public class Main {
      * multiply recursively the tab elements value on the n firsts elements
      * and return the result
      * */
-    static  int multiplyTab(int tab[]){
+    public static  int multiplyTab(int tab[]){
         return multiplyTab(tab,tab.length-1);
     }
 
@@ -16,7 +16,7 @@ public class Main {
      * multiply recursively the tab elements value on the n firsts elements
      * and return the result
      */
-    static  int  multiplyTab(int tab[],int n){
+    public static  int  multiplyTab(int tab[],int n){
         if(n>0) {
             return  tab[n] * multiplyTab(tab,n - 1);
         }else
@@ -59,7 +59,7 @@ public class Main {
     /*param:a table tab of integer and  n an integer
      * out: an integer
      * looking for looking for the  tab minimal value on the n firsts elements
-     * return the minimum
+     * return the minimumss
      * */
     public static int min(int[] tab,int n) {
 
