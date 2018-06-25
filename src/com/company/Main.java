@@ -1,52 +1,110 @@
 package com.company;
 
 public class Main {
+    /*param:a table tab of integer
+    * out: an integer
+    * multiply recursively the tab elements value of the n firsts elements
+    * and return the result
+    * */
     static  int multiplyTab(int tab[]){
-       return multiplyTab1(tab,tab.length-1);
+        return multiplyTab(tab,tab.length-1);
     }
-	
-	 public static int min(int[] tab,int n) {
-	   
-	   if(n<tab.length) {
-		   int min= min(tab,n+1);
-		 
-		  if(tab[n]< min) {
-			  min=tab[n];
-		  }
-		  return min>tab[n]?tab[n]:min;
-	   }
-	   return tab[0];
-	  
-	  
-   }
-	
-   public static  int max(int []tab) {
-	   return tab[max(tab,0,0)];
-   }
-   public static int max(int[] tab,int n,int j) {
-	   if(n<tab.length) {
-		   j=max(tab,n+1,j);
-		  if(tab[j]< tab[n]) {
-			  return n;
-		  }
-		 
-	   }
-	   return j;
-	  
-	  
-   }
-	
-    static  int  multiplyTab1(int tab[],int n){
+    /*param:a table tab of integer and integer n
+     * out: an integer
+     * multiply recursively the tab elements value of the n firsts elements
+     *
+     * and return the result
+     * */
+    static  int  multiplyTab(int tab[],int n){
         if(n>0) {
-           return  tab[n] * multiplyTab1(tab,n - 1);
+            return  tab[n] * multiplyTab(tab,n - 1);
         }else
             return  tab[n]     ;
     }
-    public static void main(String[] args) {
-	// write your code here
-      int sol=  multiplyTab(new int []{1,2,3,4});
+    /*param:a table tab of integer
+     * out: a Double
+     * return the tab average value
+     *
+     * */
+    public static double averageTab(int []tab){
 
-          System.out.print( sol);
+       return  (double)tabSum(tab,0)/tab.length;
+    }
+    /*param:a table tab of integer of the n first elements
+     * out: a Double
+     * return the tab sum value
+     *
+     * */
+    public static int tabSum(int []tab,int n){
+        if(n<tab.length){
+            return tab[n]+ tabSum(tab,n+1);
+        }
+        else if(n!=0){
+            return 0;
+        }
+        return -1;
 
     }
+    /*param:a table tab of integer and
+     * out: an integer
+     * looking for the tab minimal value
+     * and return the minimum
+     * */
+    public static int min(int tab[]) {
+        return min(tab,0);
+    }
+    /*param:a table tab of integer and  n an integer
+     * out: an integer
+     * looking for looking for the  tab minimal value of the n firsts elements
+     * return the minimum
+     * */
+    public static int min(int[] tab,int n) {
+
+        if(n<tab.length) {
+            int min= min(tab,n+1);
+
+            if(tab[n]< min) {
+                min=tab[n];
+            }
+            return min>tab[n]?tab[n]:min;
+        }
+        return tab[0];
+
+
+    }
+    /*param:a table tab of integer
+     * out: an integer
+     * looking for the tab minimal value
+     * and return the maximum
+     * */
+    public static  int max(int []tab) {
+        return tab[max(tab,0,0)];
+    }
+    /*param:a table tab of integer and n an integer of the n firstss elements
+     * out: an integer
+     * looking for the tab maximal value
+     * and return the maximum
+     * */
+    public static int max(int[] tab,int n,int j) {
+        if(n<tab.length) {
+            j=max(tab,n+1,j);
+            if(tab[j]< tab[n]) {
+                return n;
+            }
+
+        }
+        return j;
+
+
+    }
+
+
+    public static void main(String[] args) {
+        // write your code here
+        int sol=  multiplyTab(new int []{1,2,3,4});
+
+        System.out.println("tab multiplication :"+sol);
+        System.out.print("mean : "+averageTab(new int []{1,2,3,4}));
+    }
+
 }
