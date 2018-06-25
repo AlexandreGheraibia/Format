@@ -88,7 +88,6 @@ public class Main {
      * looking for the index of tab maximal value on the n firsts elements
      * and return the maximum
      * */
-    
     public static int max(int[] tab,int n,int j) {
         if(n<tab.length) {
             j=max(tab,n+1,j);
