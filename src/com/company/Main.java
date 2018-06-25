@@ -20,7 +20,7 @@ public class Main {
         if(n>0) {
             return  tab[n] * multiplyTab(tab,n - 1);
         }else
-            return  tab[n]     ;
+            return  tab[n];
     }
 
     /*param:a table tab of integer
@@ -34,7 +34,7 @@ public class Main {
 
     /*param:a table tab of integer of the n first elements
      * out: a Double
-     * return the tab sum value
+     * return the tab sum value or -1 if the tab is void
      * */
     public static int tabSum(int []tab,int n){
         if(n<tab.length){
