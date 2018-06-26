@@ -47,11 +47,11 @@ public class Liste {
     public static double average(ArrayList<Integer>integerList ){
         return integerList.size()==0? Integer.MIN_VALUE:(double)sum(integerList)/integerList.size();
     }
-    public static void reverse(ArrayList<Integer>integerList,int n ){
+    public static ArrayList<Integer> reverse(ArrayList<Integer>integerList,int n ){
         //si tableau a une taille pair 4, taille/2 vaut 2 et doit etre cette valeur
         //si le tableau a une taille impair,5 taille/2 vaut 3 et doit valoir 3
         //on voit que 4+1=5 et vaut la même valeur pour la division par 2 donc c'est neutre pour 4 d'ajouter 1
-        //et pour 5 a nous arrange.
+        //et pour 5 ça nous arrange.
         
         System.out.println((integerList.size()+1)/2);
         if(n<(integerList.size()+1)/2){
@@ -59,10 +59,10 @@ public class Liste {
 
             integerList.set(integerList.size()-1-n,integerList.get(n));
             integerList.set(n,tmp);
-            reverse(integerList,n+1);
+            return reverse(integerList,n+1);
         }
         else
-           return;
+           return integerList;
     }
 
 
@@ -85,7 +85,7 @@ public class Liste {
         System.out.println(min(integerList));
         System.out.println(max(integerList));
         System.out.println(average(integerList));
-        reverse(integerList,0);
-        System.out.println(integerList);
+
+        System.out.println(reverse(integerList,0));
     }
 }
