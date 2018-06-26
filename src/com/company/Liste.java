@@ -49,7 +49,10 @@ public class Liste {
     }
     public static void reverse(ArrayList<Integer>integerList,int n ){
         //si tableau a une taille pair 4, taille/2 vaut 2 et doit etre cette valeur
-        //si le tableau a une taille impair,7 taille/2 vaut 3 et doit valoir 4
+        //si le tableau a une taille impair,5 taille/2 vaut 3 et doit valoir 3
+        //on voit que 4+1=5 et vaut la même valeur pour la division par 2 donc c'est neutre pour 4 d'ajouter 1
+        //et pour 5 a nous arrange.
+        
         System.out.println((integerList.size()+1)/2);
         if(n<(integerList.size()+1)/2){
             int tmp=integerList.get(integerList.size()-1-n);
